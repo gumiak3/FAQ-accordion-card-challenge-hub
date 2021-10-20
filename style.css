@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    margin:0;
+    padding:0;
+    Font-size: 12px;
+    background:linear-gradient(to top,hsl(240, 73%, 65%) ,hsl(273, 75%, 66%));
+}
+.container{
+    background-color:white;
+    position:absolute;
+    width:900px;
+    left:50%;
+    right:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:20px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    height:auto;
+}
+.right-bar h1{
+    text-align: left;
+}
+.left-bar{
+    background:url("./images/bg-pattern-desktop.svg")no-repeat;
+    background-position: -575px -280px;  
+}
+.main-image{
+    position: relative;
+    top:50px;
+    background:url("./images/illustration-woman-online-desktop.svg") no-repeat;
+    width:400px;
+    height:400px;
+    background-position: -80px;
+
+}
+.main-image img{
+    position:absolute;
+    top:175px;
+    left:-95px;
+}
+.title{
+    margin-top:70px;
+}
+.questions{
+    margin-bottom:90px;
+    cursor:pointer;
+}
+.questions div{
+    margin:35px 0 0 0;
+    border-bottom:1px solid hsl(240, 5%, 91%);
+    width:75%;
+    padding-bottom:10px;
+}
+.questions div h3{
+    font-weight: lighter;
+    display:inline;
+}
+.questions div img{
+    position: relative;
+    top:7px;
+    float:right;
+    cursor:pointer;
+    
+}
+
+.questions div p.active{    
+    animation: use2 0.5s forwards;
+    display:block;
+}
+.questions div img.active{
+    animation: arrow-rotate 0.5s forwards;
+}
+@keyframes arrow-rotate{
+    100%{transform:rotate(180deg);}
+}
+
+@keyframes use2{
+    0%{margin-top:-5px;}
+    100%{margin-top:0;}
+}
+.questions div h3.active{
+    font-weight: bold;
+}
+@keyframes answer-back {
+    from{margin-top:0px;}
+    to {margin-top:-5px;}
+}
+.questions div img.back{
+    animation:arrow-back 0.5s forwards;
+}
+@keyframes arrow-back{
+    from{transform:rotate(180deg);}
+    to{transform:rotate(0deg);}
+}
+
+.questions div p{
+    display:none;
+
+}
+.box-img{
+    animation: animate-box 5s infinite;
+}
+@keyframes animate-box{
+    50%{top:-30px;}
+    100%{transform:rotate(360deg);}
+}
