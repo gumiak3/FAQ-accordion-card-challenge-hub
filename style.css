@@ -70,13 +70,16 @@ body{
 .desk-img{
     display:none;
 }
+.questions div p{
+    display:none;
+}
 .questions div p.active{   
-    animation: smooth-appearing 0.5s forwards; 
-    display:block;
+       
 }
 @keyframes smooth-appearing{
     0%{margin-top:-15px}
 }
+
 .questions div img.active{
     animation: arrow-rotate 0.5s forwards;
 }
@@ -100,8 +103,7 @@ body{
 }
 
 .questions div p{
-    display:none;
-
+    
 }
 .box-img{
     animation: animate-box 5s infinite;
