@@ -71,7 +71,6 @@ body{
     display:none;
 }
 .questions div p.active{    
-    animation: use2 0.5s forwards;
     display:block;
 }
 .questions div img.active{
@@ -81,10 +80,6 @@ body{
     100%{transform:rotate(180deg);}
 }
 
-@keyframes use2{
-    0%{margin-top:-5px;}
-    100%{margin-top:0;}
-}
 .questions div h3.active{
     font-weight: bold;
 }
