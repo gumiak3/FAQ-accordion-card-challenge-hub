@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 body{
     font-family: 'Kumbh Sans', sans-serif;
-    margin:0;
     padding:0;
+    margin:0;
     Font-size: 12px;
     background:linear-gradient(to top,hsl(240, 73%, 65%) ,hsl(273, 75%, 66%))no-repeat fixed;
+    height:100%;
+    
 }
 .container{
     background-color:white;
@@ -17,8 +19,12 @@ body{
     border-radius:20px;
     display:grid;
     grid-template-columns: repeat(2,1fr);
-    height:auto;
+   
+    
+
+    
 }
+
 .right-bar h1{
     text-align: left;
 }
@@ -43,6 +49,7 @@ body{
 .title{
     margin-top:70px;
 }
+
 .questions{
     margin-bottom:90px;
     cursor:pointer;
@@ -73,9 +80,7 @@ body{
 .questions div p{
     display:none;
 }
-.questions div p.active{   
-       
-}
+
 @keyframes smooth-appearing{
     0%{margin-top:-15px}
 }
@@ -102,9 +107,6 @@ body{
     to{transform:rotate(0deg);}
 }
 
-.questions div p{
-    
-}
 .box-img{
     animation: animate-box 5s infinite;
 }
@@ -116,7 +118,8 @@ body{
     .container{
         width:90%;
         grid-template-columns: repeat(1,1fr);
-        margin-top:50px;
+       
+      
     }
     .left-bar{
         text-align: center;
@@ -140,13 +143,17 @@ body{
         background-position: center;
         justify-content: center; 
         align-items :center; 
+        box-sizing:border-box;
+        
     }
     .desk-img{
-        position: absolute;
+        position: fixed;
         top:-120px;
         display:grid;
         
+        
     }
+    
     .title{
         margin-top:30px;
     }

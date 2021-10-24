@@ -1,4 +1,9 @@
 $(function() {
+    var previousA; // 1 2 3 4 5 answer prev
+    var previousQ; // question
+    var previousI; // Img 'the arrow'
+    var previousH; // header
+
     var question1 = $('#question1');
     var answer1 = $('#answer1');
     var img1 = $('#img1');
@@ -23,91 +28,95 @@ $(function() {
     var answer5 = $('#answer5');
     var img5 = $('#img5');
     var header5 = $('#header5');
-    question1.click(function(){
+    function ChangePreviousValue(question,answer,header,img){
+        previousQ = question;
+        previousA = answer;
+        previousH = header;
+        previousI = img;
+    }
+    function removePrevious(previousAnswer, previousQuestion, previousImg, previousHeader){
+        previousAnswer.removeClass('active');
+        previousQuestion.removeClass('active');
+        previousImg.removeClass('active');
+        previousImg.addClass('back');
+        previousHeader.removeClass('active');
+        previousAnswer.slideUp();
+    }
+    question1.click(function(){ 
         if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            answer1.removeClass('active');
-            answer1.slideUp();
-            header1.removeClass('active');
-            img1.removeClass('active');
-            img1.addClass('back');
-
+            removePrevious(previousA,previousQ,previousI,previousH);
         }else{
-            answer1.removeClass('back');
-            img1.removeClass('back');
-            answer1.addClass('active');
-            answer1.slideDown();
+            if(previousA){
+                removePrevious(previousA,previousQ,previousI,previousH);
+            }
             $(this).addClass('active');
-            img1.addClass('active');
+            answer1.addClass('active');
             header1.addClass('active');
+            img1.addClass('active');
+            answer1.slideDown();
+            ChangePreviousValue(question1,answer1,header1,img1);     
         }
+        
     });
     question2.click(function(){
         if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            answer2.removeClass('active');
-            answer2.slideUp();
-            img2.removeClass('active');
-            header2.removeClass('active');
-            img2.addClass('back');
+            removePrevious(previousA,previousQ,previousI,previousH)
         }else{
-            img2.removeClass('back');
-            answer2.addClass('active');
-            answer2.slideDown();
+            if(previousA){
+                removePrevious(previousA,previousQ,previousI,previousH);
+            }
             $(this).addClass('active');
-            img2.addClass('active');
+            answer2.addClass('active');
             header2.addClass('active');
-        }  
+            img2.addClass('active');
+            answer2.slideDown();
+            ChangePreviousValue(question2,answer2,header2,img2);     
+        }
     });
     question3.click(function(){
         if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            answer3.removeClass('active');
-            answer3.slideUp();
-            img3.removeClass('active');
-            header3.removeClass('active');
-            img3.addClass('back');
+            removePrevious(previousA,previousQ,previousI,previousH)
         }else{
-            img3.removeClass('back');
-            answer3.addClass('active');
-            answer3.slideDown();
+            if(previousA){
+                removePrevious(previousA,previousQ,previousI,previousH);
+            }
             $(this).addClass('active');
-            img3.addClass('active');
+            answer3.addClass('active');
             header3.addClass('active');
-        }  
+            img3.addClass('active');
+            answer3.slideDown();
+            ChangePreviousValue(question3,answer3,header3,img3);     
+        } 
     });
     question4.click(function(){
         if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            answer4.removeClass('active');
-            answer4.slideUp();
-            img4.removeClass('active');
-            header4.removeClass('active');
-            img4.addClass('back');
+            removePrevious(previousA,previousQ,previousI,previousH)
         }else{
-            img4.removeClass('back');
-            answer4.addClass('active');
-            answer4.slideDown();
+            if(previousA){
+                removePrevious(previousA,previousQ,previousI,previousH);
+            }
             $(this).addClass('active');
-            img4.addClass('active');
+            answer4.addClass('active');
             header4.addClass('active');
-        }  
+            img4.addClass('active');
+            answer4.slideDown();
+            ChangePreviousValue(question4,answer4,header4,img4);     
+        }
     });
     question5.click(function(){
         if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            answer5.removeClass('active');
-            answer5.slideUp();
-            img5.removeClass('active');
-            header5.removeClass('active');
-            img5.addClass('back');
+            removePrevious(previousA,previousQ,previousI,previousH)
         }else{
-            img5.removeClass('back');
-            answer5.addClass('active');
-            answer5.slideDown();
+            if(previousA){
+                removePrevious(previousA,previousQ,previousI,previousH);
+            }
             $(this).addClass('active');
-            img5.addClass('active');
+            answer5.addClass('active');
             header5.addClass('active');
-        }  
+            img5.addClass('active');
+            answer5.slideDown();
+            ChangePreviousValue(question5,answer5,header5,img5);     
+        }
     });
+    
 });
